@@ -1,0 +1,40 @@
+[project]
+name = "thefr0gg-github-io"
+version = "0.1.0"
+description = "Personnel portfolio and blog"
+authors = [
+    {name = "thefr0gg",email = "ramsy0dev@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13,<4.0"
+dependencies = [
+    "hugo (>=0.169.0,<0.170.0)"
+]
+
+[dependency-groups]
+dev = [
+    "pymarkdownlnt (>=0.9.41,<0.10.0)",
+    "codespell (>=2.4.0,<3.0.0)"
+]
+
+[tool.poetry]
+package-mode = false
+
+# Blog linting. Run all checks with:
+#   poetry run pymarkdown --config pyproject.toml scan content README.md
+#   poetry run codespell
+#   poetry run python scripts/lint_front_matter.py
+[tool.pymarkdown]
+plugins.md013.enabled = false              # long lines: prose and log output
+plugins.md033.enabled = false              # inline HTML (<img>) is used in posts
+plugins.md041.enabled = false              # front matter is TOML (+++), not seen by the linter
+plugins.md025.enabled = false              # posts start at "##" under the page title
+plugins.md024.siblings_only = true         # allow repeated headings in different sections
+
+[tool.codespell]
+skip = "public,themes,.git,poetry.lock,*.svg,*.ico,*.jpg,*.png"
+ignore-words-list = "ot"                   # "OT" is an nmap OS fingerprint field
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

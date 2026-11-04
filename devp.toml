@@ -1,0 +1,23 @@
+[devp]
+version = "0.3.0"
+config-version = "1.2"
+
+[[process]]
+name = "hugo"
+command = "hugo server -D --bind 127.0.0.1 --port 1313 --poll 500ms --disableFastRender --navigateToChanged"
+ready_port = 1313
+
+[[process]]
+name = "lint-markdown"
+command = "poetry run pymarkdown --config pyproject.toml scan content README.md"
+autostart = false
+
+[[process]]
+name = "lint-spelling"
+command = "poetry run codespell"
+autostart = false
+
+[[process]]
+name = "lint-front-matter"
+command = "poetry run python scripts/lint_front_matter.py"
+autostart = false
