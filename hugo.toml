@@ -32,9 +32,6 @@ enableRobotsTXT = true
   [[params.socials]]
     link = "https://tryhackme.com/p/ramsy0dev"
     icon = "fa-brands fa-tryhackme"
-  [[params.socials]]
-    link = "mailto:ramsy0dev@gmail.com"
-    icon = "fa-solid fa-envelope"
 
 [markup]
   [markup.goldmark]
