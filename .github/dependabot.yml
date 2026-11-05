@@ -1,0 +1,17 @@
+version: 2
+updates:
+  # The enervoid theme (git submodule)
+  - package-ecosystem: "gitsubmodule"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+
+  # Python tooling: hugo, pymarkdownlnt, codespell (pyproject.toml / poetry.lock)
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      python-tooling:
+        patterns:
+          - "*"
