@@ -13,7 +13,7 @@ dependencies = [
 
 [dependency-groups]
 dev = [
-    "pymarkdownlnt (>=0.9.41,<0.10.0)",
+    "pymarkdownlnt (>=0.9.42,<0.10.0)",
     "codespell (>=2.4.0,<3.0.0)"
 ]
 
